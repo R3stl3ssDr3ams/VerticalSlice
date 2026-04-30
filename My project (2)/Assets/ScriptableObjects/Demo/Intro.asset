@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  npcName: CollegeKid
+  _lines:
+  - Things are getting crazy out there, right?
+  - But we stick together right?
+  - You promised.
+  _favor: 0
+  _trigger: 0
+  _playerReplyOptions:
+  - Forever and always.
+  - I dunno...
+  _npcReplies:
+  - {fileID: 11400000, guid: 8a5460848e260cf4d926479017eb5b47, type: 2}
+  - {fileID: 11400000, guid: d416e368d56d93c4ab69653d31145691, type: 2}
+  _dead: 0
