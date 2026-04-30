@@ -1759,12 +1759,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981683580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a0e595d361f594f82767b952737f87, type: 3}
+  m_Script: {fileID: 11500000, guid: 1993155ffbaf26c49b5e46e591f73dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _npcReaction: 0
+  _infectionState: 2
   _dialogue: {fileID: 307336226}
   _currentNPC: {fileID: 1981683580}
+  _player: {fileID: 358132397}
   _currentNode: {fileID: 0}
   _appear: 0
   _name: CollegeKid

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public event ObjectDelegate Interacted;
     public List<GameObject> _inventory;
     public List<string> _inventoryString;
-    public int _total = 0;
+    [SerializeField] public int _total = 0;
     public static Player Instance { get; private set; }
     public Player _player { get; private set; }
 

@@ -15,8 +15,10 @@ public enum InfectionState
 public abstract class NPC : MonoBehaviour
 {
     public NPCSpeech _npcReaction;
+    public InfectionState _infectionState;
     [SerializeField] private UIController _dialogue;
     [SerializeField] private GameObject _currentNPC;
+    [SerializeField] protected Player _player;
     private DialogueNode _dialogueStartNode;
     public DialogueNode _currentNode;
     private int _currentLine = 0;
@@ -50,7 +52,7 @@ public abstract class NPC : MonoBehaviour
         {
             AdvanceDialogue();
         }
-        Debug.Log("Player's total favor: " + Player.Instance._total);
+        Debug.Log(_infectionState);
     }
 
     public void AdvanceDialogue()
@@ -88,7 +90,7 @@ public abstract class NPC : MonoBehaviour
         AdvanceDialogue();
     }
 
-    private void EndDialogue()
+    protected virtual void EndDialogue()
     {
         if (_currentNode._dead == true)
         {
