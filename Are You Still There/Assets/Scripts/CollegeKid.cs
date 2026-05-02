@@ -1,27 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollegeKid : NPC
 {
     protected override void EndDialogue()
     {
-        SetInfection();
+        gameObject.GetComponent<ScriptMachine>();
+        CustomEvent.Trigger(gameObject, "SetInfection", _player._total);
+        //SetInfection();
         base.EndDialogue();
     }
-    protected override void SetInfection()
-    {
-        switch(_player._total)
-        {
-            case <= 0:
-                _infectionState = InfectionState.Critical;
-                break;
-            case > 0 and <= 10:
-                _infectionState = InfectionState.Infected;
-                break;
-            case > 10:
-                _infectionState = InfectionState.Stable;
-                break;
-        }
-    }
+    //protected override void SetInfection()
+    //{
+        //if (_player._total >= 10)
+        //{
+            //_infectionState = InfectionState.Stable;
+        //}
+        //else if (_player._total >= 5)
+        //{
+            //_infectionState = InfectionState.Infected;
+        //}
+         //else
+        //{
+            //_infectionState = InfectionState.Critical; ;
+        //}
+    //}
 }

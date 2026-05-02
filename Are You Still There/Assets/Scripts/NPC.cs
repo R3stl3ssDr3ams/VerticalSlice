@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum NPCSpeech
@@ -12,10 +13,11 @@ public enum InfectionState
     Stable, Infected, Critical
 }
 
-public abstract class NPC : MonoBehaviour
+public class NPC : MonoBehaviour
 {
     public NPCSpeech _npcReaction;
     public InfectionState _infectionState;
+    [SerializeField] protected ScriptMachine scriptMachine;
     [SerializeField] private UIController _dialogue;
     [SerializeField] private GameObject _currentNPC;
     [SerializeField] protected Player _player;
@@ -114,5 +116,5 @@ public abstract class NPC : MonoBehaviour
         return _name;
     }
 
-    protected abstract void SetInfection();
+    //protected abstract void SetInfection();
 }
