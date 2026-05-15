@@ -10,7 +10,24 @@ From the start, the state machine was always going to be used to determine the _
 
 In the future, the state machine will be used to trigger entire dialogue nodes according to the present infection state, which will provide further impact and variance between player experiences. In this case, these changes would be stored within the Awake() function so that whenever a new NPC appears within the scene, it will immediately determine which dialogue node to select in accordance with their current stored _infectionstate. The terms for these changes will vary using an inherited class,so that certain NPC will be able to be stabilized faster and easier than others.
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+### Part I
+1. Creating the Inventory system:
+- Have items be stored within the Player inventory.
+    - Create a ScriptableObject class for Items
+    - Attach created Item ScriptableObjects to DialogueNode when necessary.
+    - Create a list within the player class that can take the ScriptableObject from the node and sotry it within the class itself.
+- Allow players to use these items through a projected menu between NPC visits. 
+    - Create a public bool that indicates when dialogue has ended with an NPC, allowing the inventory menu to appear.
+    - Create a function that takes the sprite from the Item ScriptableObject within the player class and crates an icon out of it within the inventory.
+    - Create an OnClick() function that allows players to inspect the item, both with an enlarged image and clear description. This should be concurent with the activation of a button that will let the player use the item.
+    - Create another OnClick, this time on the Use button, to allow players to experience any of the item's effects.
+    - Have a button to close out the menu and continue the game.
+
+### Part II
+2. The use of the breakdowns can typically vary between mechanics. Typically they provide a good foundation toward what needs to be done, but they are, and should, often be suject to change. For example, under the second step there is a sub-step that states that the icon must be taken from the player class and implemented to the button gameObject. This had to be changed in practice due to how sprites work on Unity, and instead, raw images were added above the icon spaces within the inventory in order to allow Item ScriptableObject to simply provide the texture instead of the sprite. While my breakdown was flawed in this interpretation, it ultimately did its job of providing me a framework to base my work off of upon implementation.
+3. Within the NPC class, there is an enum that referred to as "NPCSpeech". This enum describes behaviors done by the NPC within dialogue, such as activating the dialogue box and allowing the player to progress through dialogue by clicking on their mouse / trackpad. Using a state machine, I was able to notify when the NPC made a switch to the "Talking" behavior by triggering a small animation, where the sprite would move up and down upon changing the state. Not only would this demonstrate that the NPC has switched behaviors as intended, it also allows NPCs appear more lively to the player upon interaction.
+4. ScriptableOBjects have been the most modular and prevelant Unity System I have used while working on this project. Within DialogueNodes alone they carry data for the dialogue, changes in stats such as favor and energy, parameters around certain dialogue nodes, and any special conditions that may be in play, such as when the dialogue ends and the inventory needs to be set to active. Beyond this, however, they were also used to define the use of items, as well as the descriptions they will have within the inventory, and the raw image data used for the icons.
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
@@ -18,4 +35,13 @@ Milestone 4 Devlog goes here.
 ## Final Devlog
 Final Devlog goes here.
 ## Open-source assets
-- Cite any external assets used here!
+- Energy Drink PNG:
+https://www.pngarts.com/explore/136211
+- Old Woman PNG
+https://www.magnific.com/free-photos-vectors/older-women-transparent
+- Stock image of College Student
+https://www.istockphoto.com/photo/college-student-with-books-gm177232576-19910458
+- Apartment Stock Image
+https://www.istockphoto.com/search/2/image-film?phrase=scary+apartment
+- Image of William Hurt playing Tom Grunick in "Broadcast News"
+https://www.tcm.com/articles/1074453/broadcast-news

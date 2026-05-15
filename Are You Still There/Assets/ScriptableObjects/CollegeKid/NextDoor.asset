@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: NextDoor
+  m_EditorClassIdentifier: 
+  npcName: CollegeKid
+  _lines:
+  - We really talk much, do we?
+  - I'm Lee...
+  - The guy next door.
+  _playerReplyOptions:
+  - The college kid?
+  - The one who yells a lot?
+  _npcReplies:
+  - {fileID: 11400000, guid: 11ee6152250f19a4db993b472ad41cb7, type: 2}
+  - {fileID: 11400000, guid: 2e0bd64f26ca199419019ecbd0712fc1, type: 2}
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _favor: 0
+  _trigger: 0
+  _tire: 0
+  _item: {fileID: 0}

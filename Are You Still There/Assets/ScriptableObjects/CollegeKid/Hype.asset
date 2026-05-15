@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Hype
+  m_EditorClassIdentifier: 
+  npcName: CollegeKid
+  _lines:
+  - There we go!
+  - I mean come on; we only live once, right?
+  - It's break time!
+  - No more chemestry midterm for me!
+  - And no more of...
+  - whatever you do!
+  _playerReplyOptions:
+  - I work freelance.
+  - Exacty!
+  _npcReplies:
+  - {fileID: 11400000, guid: bb60405275fb66c4e90b65693b724913, type: 2}
+  - {fileID: 11400000, guid: bb60405275fb66c4e90b65693b724913, type: 2}
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _favor: 2
+  _trigger: 0
+  _tire: 0
+  _item: {fileID: 0}

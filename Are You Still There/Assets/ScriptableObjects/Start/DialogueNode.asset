@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: DialogueNode
+  m_EditorClassIdentifier: 
+  npcName: 
+  _lines:
+  - Hello?
+  - Are we live?
+  - Hello?
+  - To those who are still watching...
+  - We would like to confirm reports of the unknown virus sighted across the city...
+  - Now the dubbed the Despair Syndrome.
+  - Please be are that this virus is highly contageous.
+  - If you come in contact with someone...
+  - Anyone for the forseeable future...
+  - Be weary of sudden changes in behavior and lapses in memory.
+  - This may manifest physically through aloss of apettite or redness in the eye.
+  - Currently, these are trademark indicators of Despair Syndrome.
+  - Reports state increased hostility in later states.
+  - But these cases are few and far between.
+  - For now...
+  - We advise each and everyone of you to remain indoors.
+  - And keep a healthy distance from others until the virus is contained.
+  _playerReplyOptions: []
+  _npcReplies: []
+  _dead: 0
+  _end: 1
+  _intro: 0
+  _favor: 0
+  _trigger: 0
+  _tire: 0
+  _item: {fileID: 0}

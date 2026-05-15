@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Taken
+  m_EditorClassIdentifier: 
+  npcName: 
+  _lines:
+  - Alright, cool...
+  - I'll see you later then.
+  - Oh, and by the way...
+  - If you see that old lady around...
+  - Tell her I'm sorry about her kid.
+  _playerReplyOptions: []
+  _npcReplies: []
+  _dead: 0
+  _end: 1
+  _intro: 0
+  _favor: 2
+  _trigger: 0
+  _requirement: 0
+  _tire: 0
+  _item: {fileID: 11400000, guid: dd92d5bef31eeef499cd426b849d6385, type: 2}

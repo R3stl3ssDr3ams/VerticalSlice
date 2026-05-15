@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: CollegeKid
   _lines:
-  - Hey...
-  - I know we haven't spoken very much, but...
-  - Have you checked the news lately?
+  - Yo.
+  - You see that TV report?
+  - The one with the guy all scared and shit?
   _favor: 0
   _trigger: 0
   _playerReplyOptions:
-  - What news?
+  - Why do you ask?
   - Who are you again?
-  - I'm busy right now...
+  - Go away.
   _npcReplies:
-  - {fileID: 11400000, guid: f1a8a9fb66ca9a147bf04dcf01493323, type: 2}
-  - {fileID: 11400000, guid: ea287d2ba2f1f2840b9f0cd652329ca9, type: 2}
-  - {fileID: 11400000, guid: 7f01b63714013b64d82b302627f85faf, type: 2}
+  - {fileID: 11400000, guid: db6ac0a562e05f9408e057ee20f0e5d0, type: 2}
+  - {fileID: 11400000, guid: 49ea787ec4598e24eae576ac57c1978a, type: 2}
+  - {fileID: 11400000, guid: e72a4c0855098404fbd2a6ae80efe94e, type: 2}
+  _dead: 0

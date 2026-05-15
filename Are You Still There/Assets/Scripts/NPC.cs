@@ -1,7 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.UIElements;
+using System.Collections;
+using TMPro.Examples;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum NPCSpeech
 {
@@ -16,105 +20,52 @@ public enum InfectionState
 public class NPC : MonoBehaviour
 {
     public NPCSpeech _npcReaction;
-    public InfectionState _infectionState;
-    [SerializeField] protected ScriptMachine scriptMachine;
-    [SerializeField] private UIController _dialogue;
-    [SerializeField] private GameObject _currentNPC;
     [SerializeField] protected Player _player;
-    private DialogueNode _dialogueStartNode;
-    public DialogueNode _currentNode;
-    private int _currentLine = 0;
-    private bool _waitingForPlayerResponse;
+    [SerializeField] protected DialogueController _dialogueController;
+    [SerializeField] protected TMP_Text _reset;
     public bool _appear = false;
+    protected string _scene;
 
     [SerializeField] public string _name;
-    [SerializeField] private GameObject _dialoguebox;
+    [SerializeField] public GameObject _dialoguebox;
     // all the areas the convo can start in 
     public DialogueNode[] _dialogueStartingNodes;
-    private int _favorChange;
+    protected bool _timerGoing = false;
 
-    private void Awake()
+    protected virtual void Awake()
     {
-         _currentNode = _dialogueStartingNodes[0];
+        //DontDestroyOnLoad(gameObject);
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        _player = playerObject.GetComponent<Player>();
+        _dialogueController._currentNode = _dialogueStartingNodes[0];
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         if (_npcReaction == NPCSpeech.Idle) // if the NPC is in Idle then you can speak to them/ dialouge box shows up
         {
             _npcReaction = NPCSpeech.Talking;
             _dialoguebox.SetActive(true);
+            _scene = SceneManager.GetActiveScene().name;
         }
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (_npcReaction == NPCSpeech.Talking // lets NPC talk only when the player lets the speech advance with button presses
             && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
-            AdvanceDialogue();
+            _dialogueController.AdvanceDialogue();
         }
-        Debug.Log(_infectionState);
-    }
-
-    public void AdvanceDialogue()
-    {
-        _favorChange = _currentNode._favor;
-        Debug.Log("Favor change: " + _favorChange);
-        if (_favorChange != 0)
-        {
-            Player.Instance._total = (Player.Instance._total + _favorChange);
-        }
-        if (_currentLine < _currentNode._lines.Length)
-        {
-            _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
-            _currentLine++;
-        }
-        else if (_currentNode._playerReplyOptions != null && _currentNode._playerReplyOptions.Length > 0)
-        {
-            // show player dialogue choices
-            _waitingForPlayerResponse = true;
-            _dialogue.ShowPlayerOptions(_currentNode._playerReplyOptions);
-        }
-        else
-        {
-            // ends talking state if there is nothing left to talk about 
-            EndDialogue();
-        }
-    }
-
-    public void SelectedOption(int option)
-    {
-        _currentLine = 0;
-        _waitingForPlayerResponse = false;
-
-        _currentNode = _currentNode._npcReplies[option];
-        AdvanceDialogue();
-    }
-
-    protected virtual void EndDialogue()
-    {
-        if (_currentNode._dead == true)
-        {
-            Destroy(_currentNPC);
-        }
-        Debug.Log("ended dialogue");
-        _npcReaction = NPCSpeech.Idle;
-        _dialoguebox.SetActive(false);
-        _waitingForPlayerResponse = false;
-        _currentNode = _dialogueStartNode;
-        _currentLine = 0;
     }
 
     public NPC getNPC()
     {
-       return this;
+        return this;
     }
 
     public string GetName()
     {
         return _name;
     }
-
-    //protected abstract void SetInfection();
 }

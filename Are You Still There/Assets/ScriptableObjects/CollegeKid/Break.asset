@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Break
+  m_EditorClassIdentifier: 
+  npcName: CollegeKid
+  _lines:
+  - Well, isn't it obvious?
+  - This is exactly how it was last time.
+  - They tell us to stay in for a while and...
+  - BOOM!
+  - Break for the next year, man!
+  - C'mon, just act a little excited.
+  _playerReplyOptions:
+  - Let's go!
+  - You should be taking this more seriously...
+  - I don't care.
+  _npcReplies:
+  - {fileID: 11400000, guid: 37f29bf3c3146004783b926efb041f3c, type: 2}
+  - {fileID: 11400000, guid: ca8d85fbd58dfae4298f48ced3da5ce9, type: 2}
+  - {fileID: 11400000, guid: e72a4c0855098404fbd2a6ae80efe94e, type: 2}
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _favor: 0
+  _trigger: 0
+  _tire: 0
+  _item: {fileID: 0}

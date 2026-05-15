@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Eyes
+  m_EditorClassIdentifier: 
+  npcName: 
+  _lines:
+  - '*Her eyes are bloodshot*'
+  - I haven't gotten much sleep since my boy left home.
+  _playerReplyOptions:
+  - Hold on...
+  - My bad.
+  - Execute
+  _npcReplies:
+  - {fileID: 11400000, guid: 06fc79cd09d9bd54f9ec256e044936ac, type: 2}
+  - {fileID: 11400000, guid: 0167abc4792f73d4191f3662b1531e83, type: 2}
+  - {fileID: 11400000, guid: d27fa3cdadadb524dae80b1f3aaffe70, type: 2}
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _favor: 0
+  _trigger: 0
+  _requirement: 1
+  _investigation: 1
+  _execute: 0
+  _tire: 1
+  _item: {fileID: 0}
