@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Intro2
+  m_EditorClassIdentifier: 
+  npcName: Hunter
+  _lines:
+  - What's wrong?
+  - You must have felt it too...
+  - A voice in your head saying...
+  - '"Something is wrong with her."'
+  - So why did you let her live?
+  _playerReplyOptions:
+  - I can't...
+  - I don't know.
+  - I'm not a murderer
+  _npcReplies:
+  - {fileID: 11400000, guid: 68c79fb557e1c4b4fb990a5046aadc1d, type: 2}
+  - {fileID: 11400000, guid: 2c1e632bdfb15ce4dbe2afb43f7940b6, type: 2}
+  - {fileID: 11400000, guid: 852590320da05274c8389e1842417e66, type: 2}
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _final: 0
+  _favor: 0
+  _trigger: 0
+  _requirement: 0
+  _investigation: 0
+  _execute: 0
+  _tire: 0
+  _name: 
+  _item: {fileID: 0}

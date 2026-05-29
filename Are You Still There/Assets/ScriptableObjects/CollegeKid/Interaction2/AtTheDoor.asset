@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: AtTheDoor
+  m_EditorClassIdentifier: 
+  npcName: CollegeKid
+  _lines:
+  - '*You hear someone at the door*...'
+  - Hello.
+  - '*Knock Knock*'
+  - I wanna talk.
+  _playerReplyOptions:
+  - '*Answer*'
+  - '*Don''t Answer*'
+  _npcReplies:
+  - {fileID: 11400000, guid: f99d20db003910b45858c29531d21a47, type: 2}
+  - {fileID: 11400000, guid: 5c2bb63ea2177b44883fbceb014715a0, type: 2}
+  _behindDoor: 1
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _final: 0
+  _favor: 0
+  _trigger: 0
+  _requirement: 0
+  _investigation: 0
+  _execute: 0
+  _tire: 0
+  _name: 
+  _skip: 0
+  _item: {fileID: 0}

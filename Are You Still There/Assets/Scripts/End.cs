@@ -10,15 +10,15 @@ public class End : MonoBehaviour
     {
         if (Player.Instance._murderer == true)
         {
-            _endText.text = "You got rid of the infected and enjoyed a quiet night in the appartment. You are safe for now.";
+            _endText.text = "The day is over. As hours pass you wonder if you made the right decisions. It doesn't matter. What's done is done, now all you can do is press on.";
         }
         else if (Player.Instance._total == 6 && Player.Instance._murderer == true)
         {
-            _endText.text = "You formed a tight bond with Lee and got rid of the infected in the area. Now, go enjoy a couple beers with him!";
+            _endText.text = "As the moonlight descends gently through your window, you are glad that you have found a good friend in Lee. Hopefully you can keep each other safe in the coming days.";
         }
         else
         {
-            _endText.text = "The infected still roam the apartment. You are not safe.";
+            _endText.text = "The clock strikes twelve. As you fall asleep, you wonder just how many of your neighbors may already be infected...";
         }
     }
 

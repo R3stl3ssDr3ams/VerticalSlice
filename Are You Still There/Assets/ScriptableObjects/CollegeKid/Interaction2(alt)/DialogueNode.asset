@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: DialogueNode
+  m_EditorClassIdentifier: 
+  npcName: CollegeKid
+  _lines:
+  - Figures.
+  - She's been battling dimensia for a while.
+  - For her sake, I hope she stays that way.
+  - I don't want her finding out about what happned to the kid.
+  - But anyway, I'll be off now.
+  - You take some of this as well.
+  - '*He hands another energy drink*'
+  _playerReplyOptions:
+  - '*Take it*'
+  - Investigate
+  _npcReplies:
+  - {fileID: 11400000, guid: 0c2b04e254433ae4f892c33e1626f189, type: 2}
+  - {fileID: 11400000, guid: 52a354713a9ab3148b7daef65ee51260, type: 2}
+  _behindDoor: 0
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _final: 0
+  _favor: 1
+  _trigger: 0
+  _requirement: 0
+  _investigation: 0
+  _execute: 0
+  _tire: 0
+  _name: 
+  _skip: 0
+  _item: {fileID: 0}

@@ -28,20 +28,19 @@ public class NPC : MonoBehaviour
 
     [SerializeField] public string _name;
     [SerializeField] public GameObject _dialoguebox;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     // all the areas the convo can start in 
     public DialogueNode[] _dialogueStartingNodes;
     protected bool _timerGoing = false;
+    public bool _isDead;
+    public bool _hasTalked = false;
 
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         //DontDestroyOnLoad(gameObject);
         GameObject playerObject = GameObject.FindWithTag("Player");
         _player = playerObject.GetComponent<Player>();
         _dialogueController._currentNode = _dialogueStartingNodes[0];
-    }
-
-    protected virtual void Start()
-    {
         if (_npcReaction == NPCSpeech.Idle) // if the NPC is in Idle then you can speak to them/ dialouge box shows up
         {
             _npcReaction = NPCSpeech.Talking;
@@ -56,6 +55,14 @@ public class NPC : MonoBehaviour
             && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
             _dialogueController.AdvanceDialogue();
+        }
+        if (_dialogueController._currentNode != null && _dialogueController._currentNode._behindDoor == true)
+        {
+            _spriteRenderer.enabled = false;
+        }
+        else
+        {
+            _spriteRenderer.enabled = true;
         }
     }
 

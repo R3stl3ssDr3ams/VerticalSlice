@@ -9,12 +9,15 @@ public class Player : MonoBehaviour
     public delegate void ObjectDelegate(GameObject o);
     public event ObjectDelegate Interacted;
     public List<Item> _inventory;
+    public List<string> _died;
+    public string _next;
     public Item[] _inventoryarray;
     public List<string> _inventoryString;
     [SerializeField] public int _energy = 3;
     [SerializeField] public int _total = 0;
     [SerializeField] public int _investigation = 0;
     public bool _murderer = false;
+    public bool _smoker = false;
     public static Player Instance { get; private set; }
     public Player _player { get; private set; }
 
@@ -40,6 +43,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("Player total: " + _total);
     }
 }
