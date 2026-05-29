@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9e8ca572115f4ead0de94506f0009, type: 3}
+  m_Name: Eyes
+  m_EditorClassIdentifier: 
+  npcName: 
+  _lines:
+  - '*His eyes are slightly red*'
+  - Why is that?
+  _playerReplyOptions:
+  - Hold on...
+  - My bad.
+  - Execute
+  _npcReplies:
+  - {fileID: 11400000, guid: 52a354713a9ab3148b7daef65ee51260, type: 2}
+  - {fileID: 11400000, guid: 7dfa40c63f410834888613fc1f2e9718, type: 2}
+  - {fileID: 11400000, guid: 1c3b265823cc72b4897de9f15a20d52d, type: 2}
+  _behindDoor: 0
+  _dead: 0
+  _end: 0
+  _intro: 0
+  _final: 0
+  _favor: 0
+  _trigger: 0
+  _requirement: 1
+  _investigation: 1
+  _execute: 0
+  _tire: 1
+  _name: 
+  _skip: 0
+  _item: {fileID: 0}

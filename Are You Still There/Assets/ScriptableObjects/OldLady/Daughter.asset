@@ -21,14 +21,17 @@ MonoBehaviour:
   - What a waste of time.
   _playerReplyOptions: []
   _npcReplies: []
+  _behindDoor: 0
   _dead: 0
-  _end: 0
+  _end: 1
   _intro: 0
-  _final: 1
+  _final: 0
   _favor: 0
   _trigger: 0
   _requirement: 0
   _investigation: 0
   _execute: 0
   _tire: 0
+  _name: Hunter
+  _skip: 0
   _item: {fileID: 0}

@@ -20,22 +20,33 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject _use;
     [SerializeField] public TMP_Text _displayText;
     [SerializeField] private GameObject _oldLady;
+    [SerializeField] private GameObject _parentObject;
+    private GameObject _currentNPC;
     private int _currentOption;
 
     public void Continue()
     {
         _inventorybox.SetActive(false);
         _dialogueController._currentNPC = null;
-        _dialogueController._NPC.SetActive(false);
-        _oldLady.SetActive(true);
+        _currentNPC = _parentObject.transform.Find(Player.Instance._next).gameObject;
+        _currentNPC.SetActive(true);
+        Player.Instance._next = null;
+
     }
     public void Click(int value)
     {
         _currentOption = value;
-        _use.SetActive(true);
-        _display.SetActive(true);
-        _display.GetComponent<RawImage>().texture = Player.Instance._inventoryarray[value]._icon;
-        _displayText.text = Player.Instance._inventory[value]._description;
+        if (Player.Instance._inventory[_currentOption] != null)
+        {
+            _use.SetActive(true);
+            _display.SetActive(true);
+            _display.GetComponent<RawImage>().texture = Player.Instance._inventoryarray[value]._icon;
+            _displayText.text = Player.Instance._inventory[value]._description;
+        }
+        else if (Player.Instance._inventory[_currentOption] == null)
+        {
+            Debug.Log("You are stupid");
+        }
     }
     public void Effect()
     {
@@ -48,12 +59,18 @@ public class UIController : MonoBehaviour
                 Player.Instance._energy = 3;
             }
         }
+        else if (Player.Instance._inventory[_currentOption]._cigarette == true)
+        {
+            Player.Instance._smoker = true;
+        }
         _displayText.text = "Empty...";
         _use.SetActive(false);
         _display.GetComponent<RawImage>().texture = null;
         _display.SetActive(false);
         _icons[_currentOption].GetComponent<RawImage>().texture = null;
         _icons[_currentOption].SetActive(false);
+        Player.Instance._inventoryarray[_currentOption] = null;
+        Player.Instance._inventory.RemoveAt(_currentOption);
     }
     // dialogue logic
     public void ShowDialogue(string dialogue)
