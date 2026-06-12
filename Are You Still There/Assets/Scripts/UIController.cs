@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
     [SerializeField] public TMP_Text _displayText;
     [SerializeField] private GameObject _oldLady;
     [SerializeField] private GameObject _parentObject;
+    [SerializeField] private AudioSource _audio;
     private GameObject _currentNPC;
     private int _currentOption;
 
@@ -38,6 +39,7 @@ public class UIController : MonoBehaviour
         _currentOption = value;
         if (Player.Instance._inventory[_currentOption] != null)
         {
+            GetComponent<AudioSource>().Play();
             _use.SetActive(true);
             _display.SetActive(true);
             _display.GetComponent<RawImage>().texture = Player.Instance._inventoryarray[value]._icon;
@@ -50,6 +52,7 @@ public class UIController : MonoBehaviour
     }
     public void Effect()
     {
+        _audio.Play();
         if (Player.Instance._inventory[_currentOption]._reAmp > 0)
         {
             Player.Instance._energy += Player.Instance._inventory[_currentOption]._reAmp;

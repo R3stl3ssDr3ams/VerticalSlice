@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class DialogueController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class DialogueController : MonoBehaviour
     [SerializeField] public GameObject _finalButton;
     [SerializeField] public TMP_Text _energy_text;
     [SerializeField] private GrabBag _grabBag;
+    [SerializeField] private Material _bang;
+    [SerializeField] private AudioSource _audio;
+    private float _intensity = 0f;
     private int _random;
     public UniversalRendererData _rendererData;
     public string _featureName = "FullScreenPass";
@@ -26,10 +30,16 @@ public class DialogueController : MonoBehaviour
     private int _currentLine = 0;
     private bool _waitingForPlayerResponse;
     private bool _tookenergy = true;
+    private bool _shaderactive = false;
+    private bool _One = false;
 
 
     private void OnEnable()
     {
+        if (_bang != null)
+        {
+            _bang.SetFloat("_Intensity", _intensity);
+        }
         _NPC = GameObject.FindGameObjectWithTag("NPC");
         _currentNPC = GameObject.FindGameObjectWithTag("NPC").GetComponent<NPC>();
     }
@@ -37,12 +47,17 @@ public class DialogueController : MonoBehaviour
     {
         if (_currentLine < _currentNode._lines.Length)
         {
+            _audio.Play();
             _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
             _currentLine++;
             if (_tookenergy == false)
             {
                 _tookenergy = true;
                 _tookenergy = true;
+            }
+            if (_currentNode._dead == true && _shaderactive == false)
+            {
+                _shaderactive = true;
             }
         }
         else if (_currentNode._playerReplyOptions != null && _currentNode._playerReplyOptions.Length > 0)
@@ -125,6 +140,9 @@ public class DialogueController : MonoBehaviour
         }
         if (_currentNode._dead == true)
         {
+            _shaderactive = false;
+            _intensity = 0f;
+            _bang.SetFloat("_Intensity", _intensity);
             Player.Instance._died.Add(_currentNPC._name);
             _currentNPC._isDead = true;
             Destroy(_NPC);
@@ -144,5 +162,18 @@ public class DialogueController : MonoBehaviour
         _waitingForPlayerResponse = false;
         _currentNode = _dialogueStartNode;
         _currentLine = 0;
+    }
+
+    private void Update()
+    {
+        Debug.Log(_intensity);
+        if (_shaderactive == true)
+        {
+            if (_intensity < 1f && _One == false)
+            {
+                _intensity += Time.deltaTime;
+                _bang.SetFloat("_Intensity", _intensity);
+            }
+        }
     }
 }
