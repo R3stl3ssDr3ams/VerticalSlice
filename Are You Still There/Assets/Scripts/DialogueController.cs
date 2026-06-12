@@ -31,6 +31,7 @@ public class DialogueController : MonoBehaviour
     private bool _waitingForPlayerResponse;
     private bool _tookenergy = true;
     private bool _shaderactive = false;
+    private bool _One = false;
 
 
     private void OnEnable()
@@ -54,9 +55,9 @@ public class DialogueController : MonoBehaviour
                 _tookenergy = true;
                 _tookenergy = true;
             }
-            if (_currentNode._dead != true && _shaderactive == true)
+            if (_currentNode._dead == true && _shaderactive == false)
             {
-                _shaderactive = false;
+                _shaderactive = true;
             }
         }
         else if (_currentNode._playerReplyOptions != null && _currentNode._playerReplyOptions.Length > 0)
@@ -139,9 +140,11 @@ public class DialogueController : MonoBehaviour
         }
         if (_currentNode._dead == true)
         {
+            _shaderactive = false;
+            _intensity = 0f;
+            _bang.SetFloat("_Intensity", _intensity);
             Player.Instance._died.Add(_currentNPC._name);
             _currentNPC._isDead = true;
-            _shaderactive = true;
             Destroy(_NPC);
             Player.Instance._murderer = true;
         }
@@ -163,17 +166,13 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if(_shaderactive == true)
+        Debug.Log(_intensity);
+        if (_shaderactive == true)
         {
-            _intensity = 1f;
-            _bang.SetFloat("_Intensity", _intensity);
-            _shaderactive = false;
-            if (_intensity > 0f) 
+            if (_intensity < 1f && _One == false)
             {
-                _intensity -= Time.deltaTime * 2f;
-                _intensity = Mathf.Max(_intensity, 0f);
+                _intensity += Time.deltaTime;
                 _bang.SetFloat("_Intensity", _intensity);
-                Debug.Log(_intensity);
             }
         }
     }
