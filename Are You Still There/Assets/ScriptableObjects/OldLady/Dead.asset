@@ -18,6 +18,7 @@ MonoBehaviour:
   - Please don't do this...
   _playerReplyOptions: []
   _npcReplies: []
+  _behindDoor: 0
   _dead: 1
   _end: 1
   _intro: 0
